@@ -1,0 +1,32 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: RewardsContract
+    network: bsc
+    source:
+      address: "0xe3Cf8C99E10C1a7138520391bef6dddC61Aa0b91"
+      abi: RewardsContract
+      startBlock: 47405019
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - BalanceChecked
+        - PointsRedeemed
+        - PointsRewarded
+      abis:
+        - name: RewardsContract
+          file: ./abis/RewardsContract.json
+      eventHandlers:
+        - event: BalanceChecked(indexed address,uint256)
+          handler: handleBalanceChecked
+        - event: PointsRedeemed(indexed address,uint256,uint256)
+          handler: handlePointsRedeemed
+        - event: PointsRewarded(indexed address,uint256)
+          handler: handlePointsRewarded
+      file: ./src/rewards-contract.ts
