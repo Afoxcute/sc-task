@@ -11,8 +11,8 @@ import {
 
 export function handleBalanceChecked(event: BalanceCheckedEvent): void {
   let entity = new BalanceChecked(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
-  )
+    event.transaction.hash.toHex() + "-" + event.logIndex.toString()
+  );
   entity.user = event.params.user
   entity.balance = event.params.balance
 
@@ -25,8 +25,8 @@ export function handleBalanceChecked(event: BalanceCheckedEvent): void {
 
 export function handlePointsRedeemed(event: PointsRedeemedEvent): void {
   let entity = new PointsRedeemed(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
-  )
+    event.transaction.hash.toHex() + "-" + event.logIndex.toString()
+  );
   entity.user = event.params.user
   entity.points = event.params.points
   entity.tokens = event.params.tokens
@@ -40,8 +40,8 @@ export function handlePointsRedeemed(event: PointsRedeemedEvent): void {
 
 export function handlePointsRewarded(event: PointsRewardedEvent): void {
   let entity = new PointsRewarded(
-    event.transaction.hash.concatI32(event.logIndex.toI32())
-  )
+    event.transaction.hash.toHex() + "-" + event.logIndex.toString()
+  );
   entity.user = event.params.user
   entity.points = event.params.points
 

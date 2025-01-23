@@ -6,7 +6,7 @@ schema:
 dataSources:
   - kind: ethereum
     name: RewardsContract
-    network: bsc
+    network: chapel
     source:
       address: "0xe3Cf8C99E10C1a7138520391bef6dddC61Aa0b91"
       abi: RewardsContract
