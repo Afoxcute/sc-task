@@ -33,6 +33,7 @@
     "dotenv": "^16.4.5",
     "hardhat-gas-reporter": "^1.0.8",
     "solidity-coverage": "^0.8.1",
+    "thirdweb": "^5.86.2",
     "ts-node": "^10.9.2",
     "typechain": "^8.3.0"
   }
