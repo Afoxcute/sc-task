@@ -25,3 +25,9 @@ type PointsRewarded @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type User @entity {
+  id: Bytes!
+  totalRewards: BigInt!
+  transactions: [PointsRewarded!]!
+}

@@ -43,8 +43,8 @@ const config: HardhatUserConfig = {
   networks: {
     // for testnet
     "lisk-sepolia": {
-      url: process.env.LISK_RPC_URL!,
-      accounts: [process.env.ACCOUNT_PRIVATE_KEY!],
+      url: "https://sepolia.base.org",
+      accounts: ["8ac9b0a8ff86775a765d120790bf5fc15c848fd8aaf15da6344f67016868a438"],
       gasPrice: 1000000000,
     },
   },
