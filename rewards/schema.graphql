@@ -1,0 +1,33 @@
+type BalanceChecked @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  balance: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PointsRedeemed @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  points: BigInt! # uint256
+  tokens: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type PointsRewarded @entity(immutable: true) {
+  id: Bytes!
+  user: Bytes! # address
+  points: BigInt! # uint256
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type User @entity {
+  id: Bytes!
+  totalRewards: BigInt!
+  transactions: [PointsRewarded!]!
+}
